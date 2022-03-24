@@ -1,0 +1,39 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="450" d:DesignHeight="450"
+			 Width="450" Height="450"
+             x:Class="diary.Views.TaskListView">
+
+	<UserControl.Styles>
+		<StyleInclude Source="/Styles/Style.axaml"/>
+	</UserControl.Styles>
+	
+	<Grid RowDefinitions="auto,*,60" ColumnDefinitions="*">
+		<DatePicker Name="datePicker"/>
+		<ScrollViewer>
+			<ItemsControl>
+				<ItemsControl.ItemTemplate>
+					<DataTemplate>
+						<Border Classes="taskBorder">
+							<Grid ColumnDefinitions="*, 50, 50" RowDefinitions="*">
+								<TextBlock Name="taskHeader" Classes="textBlock"/>
+								<Button Name="descr" Classes="btn">
+									<Image Name="zoom" Classes="img"/>
+								</Button>
+								<Button Name="delete" Classes="btn">
+									<Image Name="trash" Classes="img"/>
+								</Button>
+							</Grid>
+						</Border>
+					</DataTemplate>
+				</ItemsControl.ItemTemplate>
+			</ItemsControl>
+		</ScrollViewer>
+		<Button Name="newTask" Classes="btn">
+			<Image Name="add" Classes="img"/>
+		</Button>
+	</Grid>
+	
+</UserControl>
